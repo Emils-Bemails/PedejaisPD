@@ -32,7 +32,7 @@
                         {{ ucfirst($cat) }}
                     </option>
                 @endforeach
-            </select>
+            </select>da
         </div>
 
         <button type="submit" class="btn btn-edit">Update Product</button>
