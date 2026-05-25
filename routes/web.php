@@ -15,3 +15,5 @@ Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name
 Route::put('/products/{product}', [ProductController::class, 'update'])->name('products.update');
 Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
 Route::patch('/products/{product}/status', [ProductController::class, 'updateStatus'])->name('products.updateStatus');
+
+Route::post('/products/{product}/archive', [ProductController::class, 'archive'])->name('products.archive');

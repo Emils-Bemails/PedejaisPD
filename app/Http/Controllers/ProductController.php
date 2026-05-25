@@ -38,7 +38,7 @@ class ProductController extends Controller
 
         $product = Product::create($validated);
 
-        return redirect()->route('products.create', $product);
+        return redirect()->route('products.index', $product);
     }
 
     /**
@@ -98,5 +98,13 @@ class ProductController extends Controller
         return redirect()->route('products.show', $product)->with('success', 'Product status updated successfully.');
 
     }
+
+     public function archive(Product $product)
+    {
+        $product->now("archived_at");
+        $product->whereNull('archived_at')->get();
+        return redirect()->route('products.archive', $product)->with('success', 'This product is archived');
+    }
+
 
 }

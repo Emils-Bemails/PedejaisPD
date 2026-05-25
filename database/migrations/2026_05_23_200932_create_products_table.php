@@ -18,6 +18,7 @@ return new class extends Migration
             $table->decimal('price', 10, 2);
             $table->enum('category', ['electronics', 'clothing', 'home', 'beauty', 'other'])->default('other');
             $table->enum('status', ['active', 'inactive', 'out_of_stock'])->default('active');
+            $table->timestamps("archived_at")->nullable();
             $table->timestamps();
         });
     }

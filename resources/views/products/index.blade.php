@@ -30,6 +30,12 @@
                         @method('DELETE')
                         <button type="submit" class="btn btn-delete" onclick="return confirm('Delete this product?')">Delete</button>
                     </form>
+
+                    <form action="{{ route('products.archive', $product->id) }}" method="POST" style="display:inline;">
+                        @csrf
+                        @method('POST')
+                        <button type="submit" class="btn btn-delete" onclick="return confirm('Archove this product?')">Archive</button>
+                    </form>
                 </td>
             </tr>
             @endforeach

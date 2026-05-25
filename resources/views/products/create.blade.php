@@ -5,8 +5,9 @@
     <a href="{{ route('products.index') }}" class="btn btn-back">Back to List</a>
     <br><br>
 
-    <form action="{{ route('products.index') }}" method="POST" style="max-width: 500px;">
+    <form action="{{ route('products.store') }}" method="POST" style="max-width: 500px;">
         @csrf
+        @method("POST")
         <div class="form-group">
             <label>Name:</label>
             <input type="text" name="name" value="{{ old('name') }}">
